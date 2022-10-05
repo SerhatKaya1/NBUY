@@ -3,3 +3,13 @@ C:\Users\SABAH\Documents\GitHub\NBUY\Proje10_SwichCondition\obj\Debug\net6.0\Pro
 C:\Users\SABAH\Documents\GitHub\NBUY\Proje10_SwichCondition\obj\Debug\net6.0\Proje10_SwichCondition.AssemblyInfoInputs.cache
 C:\Users\SABAH\Documents\GitHub\NBUY\Proje10_SwichCondition\obj\Debug\net6.0\Proje10_SwichCondition.AssemblyInfo.cs
 C:\Users\SABAH\Documents\GitHub\NBUY\Proje10_SwichCondition\obj\Debug\net6.0\Proje10_SwichCondition.csproj.CoreCompileInputs.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje10_SwichCondition\bin\Debug\net6.0\Proje10_SwichCondition.exe
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje10_SwichCondition\bin\Debug\net6.0\Proje10_SwichCondition.deps.json
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje10_SwichCondition\bin\Debug\net6.0\Proje10_SwichCondition.runtimeconfig.json
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje10_SwichCondition\bin\Debug\net6.0\Proje10_SwichCondition.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje10_SwichCondition\bin\Debug\net6.0\Proje10_SwichCondition.pdb
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje10_SwichCondition\obj\Debug\net6.0\Proje10_SwichCondition.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje10_SwichCondition\obj\Debug\net6.0\refint\Proje10_SwichCondition.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje10_SwichCondition\obj\Debug\net6.0\Proje10_SwichCondition.pdb
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje10_SwichCondition\obj\Debug\net6.0\Proje10_SwichCondition.genruntimeconfig.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje10_SwichCondition\obj\Debug\net6.0\ref\Proje10_SwichCondition.dll
