@@ -1,0 +1,5 @@
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje10_SwichCondition\obj\Debug\net6.0\Proje10_SwichCondition.csproj.AssemblyReference.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje10_SwichCondition\obj\Debug\net6.0\Proje10_SwichCondition.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje10_SwichCondition\obj\Debug\net6.0\Proje10_SwichCondition.AssemblyInfoInputs.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje10_SwichCondition\obj\Debug\net6.0\Proje10_SwichCondition.AssemblyInfo.cs
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje10_SwichCondition\obj\Debug\net6.0\Proje10_SwichCondition.csproj.CoreCompileInputs.cache

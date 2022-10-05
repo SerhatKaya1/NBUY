@@ -1,0 +1,15 @@
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje08HataKontolleri\obj\Debug\net6.0\Proje08HataKontolleri.csproj.AssemblyReference.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje08HataKontolleri\obj\Debug\net6.0\Proje08HataKontolleri.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje08HataKontolleri\obj\Debug\net6.0\Proje08HataKontolleri.AssemblyInfoInputs.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje08HataKontolleri\obj\Debug\net6.0\Proje08HataKontolleri.AssemblyInfo.cs
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje08HataKontolleri\obj\Debug\net6.0\Proje08HataKontolleri.csproj.CoreCompileInputs.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje08HataKontolleri\bin\Debug\net6.0\Proje08HataKontolleri.exe
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje08HataKontolleri\bin\Debug\net6.0\Proje08HataKontolleri.deps.json
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje08HataKontolleri\bin\Debug\net6.0\Proje08HataKontolleri.runtimeconfig.json
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje08HataKontolleri\bin\Debug\net6.0\Proje08HataKontolleri.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje08HataKontolleri\bin\Debug\net6.0\Proje08HataKontolleri.pdb
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje08HataKontolleri\obj\Debug\net6.0\Proje08HataKontolleri.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje08HataKontolleri\obj\Debug\net6.0\refint\Proje08HataKontolleri.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje08HataKontolleri\obj\Debug\net6.0\Proje08HataKontolleri.pdb
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje08HataKontolleri\obj\Debug\net6.0\Proje08HataKontolleri.genruntimeconfig.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje08HataKontolleri\obj\Debug\net6.0\ref\Proje08HataKontolleri.dll
