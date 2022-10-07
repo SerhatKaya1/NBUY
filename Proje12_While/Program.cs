@@ -106,7 +106,43 @@ class Program
          //        Console.WriteLine("Tebrikler, bildiniz!");
               //    }      //   } while (tahminEdilenSayi!=uretilenSayi && hak<=hakSiniri);
 
-               
+               do
+        {
+            Console.Write($"{hak}.Tahmininizi giriniz(1-100): ");
+            tahminEdilenSayi=Convert.ToInt32(Console.ReadLine());
+            hak++;
+            if (tahminEdilenSayi>uretilenSayi)
+            tahminEdilenSayi = Convert.ToInt32(Console.ReadLine());
+            if (tahminEdilenSayi > uretilenSayi)
+            {
+                Console.WriteLine("Büyük girdin");
+            }
+            else if (tahminEdilenSayi < uretilenSayi)
+            {
+                Console.WriteLine("Büyük bir değer girdiniz, daha küçük bir değer girerek yeniden deneyiniz!");
+                Console.WriteLine("Küçük girdin");
+            }
+            else if (tahminEdilenSayi<uretilenSayi)
+            if (tahminEdilenSayi != uretilenSayi)
+            {
+                Console.WriteLine("Küçük bir değer girdiniz, daha büyük bir değer girerek yeniden deneyiniz!");
+                hak++;
+                if (hak <= hakSiniri)
+                {
+                    Console.WriteLine("Kaybettin!");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Tebrikler, bildiniz!");
+                Console.WriteLine("Kazandın!");
+            }
+        } while (tahminEdilenSayi!=uretilenSayi && hak<=hakSiniri);
+
+        } while (tahminEdilenSayi != uretilenSayi && hak <= hakSiniri);
+        //Eğer program bu satıra gelmiş ise ya doğru tahminde bulunulmuştur ya da hak sona ermiştir.
+    }
+}
                  
    
       

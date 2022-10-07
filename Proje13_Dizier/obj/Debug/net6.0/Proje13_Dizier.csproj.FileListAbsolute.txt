@@ -1,0 +1,15 @@
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje13_Dizier\bin\Debug\net6.0\Proje13_Dizier.exe
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje13_Dizier\bin\Debug\net6.0\Proje13_Dizier.deps.json
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje13_Dizier\bin\Debug\net6.0\Proje13_Dizier.runtimeconfig.json
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje13_Dizier\bin\Debug\net6.0\Proje13_Dizier.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje13_Dizier\bin\Debug\net6.0\Proje13_Dizier.pdb
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje13_Dizier\obj\Debug\net6.0\Proje13_Dizier.csproj.AssemblyReference.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje13_Dizier\obj\Debug\net6.0\Proje13_Dizier.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje13_Dizier\obj\Debug\net6.0\Proje13_Dizier.AssemblyInfoInputs.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje13_Dizier\obj\Debug\net6.0\Proje13_Dizier.AssemblyInfo.cs
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje13_Dizier\obj\Debug\net6.0\Proje13_Dizier.csproj.CoreCompileInputs.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje13_Dizier\obj\Debug\net6.0\Proje13_Dizier.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje13_Dizier\obj\Debug\net6.0\refint\Proje13_Dizier.dll
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje13_Dizier\obj\Debug\net6.0\Proje13_Dizier.pdb
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje13_Dizier\obj\Debug\net6.0\Proje13_Dizier.genruntimeconfig.cache
+C:\Users\SABAH\Documents\GitHub\NBUY\Proje13_Dizier\obj\Debug\net6.0\ref\Proje13_Dizier.dll
