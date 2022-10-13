@@ -1,0 +1,15 @@
+﻿1-) Bir kaç bölümde okuyan öğrencilerin bilgilerinin girilmesini ve bunların doğru bir şekilde class/interface/list yapılarının içerisinde tutulmasını sağlayarak ekrana sonucu yazdıralım.
+ Bolum classı  ---> Id,Ad,Aciklama
+ Ogrenci classı  --->Id,OgrNo,Ad,Soyad,Yas
+ 2 adet bölüm bilgisi olsun
+ Her bölümün içinde 3'er adet öğrenci bilgisi olsun
+ Bu bilgiler klavyeden girilsin
+
+
+ Yol haritası
+ 1-)İhtiyaç duyulan Interface/Class yapıları hazılanmalı
+ 2-)Gerekli metot varsa onlar hazırlanmalı
+ 3-) Program kodanmalı
+
+ ***Birazdan bilgisini vereceğimiz bir şekilde , bir Ödev deposu oluşturup
+ bu projeyi Ödev deponuza atmanz gerekiyor.
