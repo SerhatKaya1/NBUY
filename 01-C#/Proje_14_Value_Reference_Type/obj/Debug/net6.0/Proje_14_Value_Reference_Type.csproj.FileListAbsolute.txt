@@ -1,5 +1,0 @@
-C:\Users\SABAH\Documents\GitHub\NBUY\Proje_14_Value_Reference_Type\obj\Debug\net6.0\Proje_14_Value_Reference_Type.csproj.AssemblyReference.cache
-C:\Users\SABAH\Documents\GitHub\NBUY\Proje_14_Value_Reference_Type\obj\Debug\net6.0\Proje_14_Value_Reference_Type.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\SABAH\Documents\GitHub\NBUY\Proje_14_Value_Reference_Type\obj\Debug\net6.0\Proje_14_Value_Reference_Type.AssemblyInfoInputs.cache
-C:\Users\SABAH\Documents\GitHub\NBUY\Proje_14_Value_Reference_Type\obj\Debug\net6.0\Proje_14_Value_Reference_Type.AssemblyInfo.cs
-C:\Users\SABAH\Documents\GitHub\NBUY\Proje_14_Value_Reference_Type\obj\Debug\net6.0\Proje_14_Value_Reference_Type.csproj.CoreCompileInputs.cache
