@@ -21,14 +21,11 @@ for (const span of filters) {
         displayTasks(span.id);
     });
 };
-let gorevListesi = [
-    { 'id': 1, 'gorevAdi': 'Görev 1', 'durum': 'completed' },
-    { 'id': 2, 'gorevAdi': 'Görev 2', 'durum': 'pending' },
-    { 'id': 3, 'gorevAdi': 'Görev 3', 'durum': 'completed' },
-    { 'id': 4, 'gorevAdi': 'Görev 4', 'durum': 'pending' },
-    { 'id': 5, 'gorevAdi': 'Görev 5', 'durum': 'completed' }
-];
-
+let gorevListesi = [];
+if (localStorage.getItem('gorevListesi') != null) {
+    gorevListesi = JSON.parse(localStorage.getItem('gorevListesi'));
+}
+let taskBox = document.getElementById('task-box');
 function displayTasks(filter) {
     let ul = document.getElementById('task-list');
     ul.innerHTML = '';
@@ -64,9 +61,15 @@ function newTask(event) {
     if (isFull(txtTaskName.value)) {
         if (!isEditMode) {
             //Yeni kayıt işlemleri
+            let id;
+            if (gorevListesi.length == 0) {
+                id = 1;
+            } else {
+                id = gorevListesi[gorevListesi.length - 1].id + 1;
+            }
             gorevListesi.push(
                 {
-                    'id': gorevListesi.length + 1,
+                    'id': id,
                     'gorevAdi': ilkHarfiBuyut(txtTaskName.value),
                     'durum': 'pending'
                 }
@@ -78,6 +81,7 @@ function newTask(event) {
                     gorev.gorevAdi = ilkHarfiBuyut(txtTaskName.value);
                     isEditMode = false;
                     btnAdd.innerText = 'Ekle';
+                    taskBox.style.display = 'block';
                     break;
                 }
             }
@@ -88,6 +92,7 @@ function newTask(event) {
     txtTaskName.value = '';
     displayTasks(document.querySelector('span.active').id);
     txtTaskName.focus();
+    saveLocal();
 };
 
 function isFull(value) {
@@ -112,6 +117,7 @@ function removeTask(id) {
     };
     gorevListesi.splice(deletedId, 1);
     displayTasks(document.querySelector('span.active').id);
+    saveLocal();
 }
 
 function editTask(id, gorevAdi) {
@@ -120,6 +126,8 @@ function editTask(id, gorevAdi) {
     txtTaskName.value = gorevAdi;
     txtTaskName.focus();
     btnAdd.innerText = 'Kaydet';
+    // taskBox.style.visibility='hidden';
+    taskBox.style.display = 'none';
 }
 
 function clearAll() {
@@ -127,6 +135,7 @@ function clearAll() {
     if (cevap) {
         gorevListesi.splice(0);
         displayTasks('all');
+        saveLocal();
     }
 }
 
@@ -148,8 +157,11 @@ function updateStatus(selectedTask) {
         }
     }
     displayTasks(document.querySelector('span.active').id);
+    saveLocal();
 }
 
+function saveLocal() {
+    localStorage.setItem('gorevListesi', JSON.stringify(gorevListesi));
+}
 
 displayTasks('all');
-
