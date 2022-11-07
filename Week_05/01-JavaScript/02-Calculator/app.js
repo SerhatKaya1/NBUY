@@ -8,14 +8,14 @@ let waitingForSecondValue = false;
 updateDisplay();
 
 function updateDisplay() {
-    display.value = displayValue.replace('.',',')    //Noktaları virgüle çevir.//
+    display.value = displayValue.replace('.',',');
 }
 
 keys.addEventListener('click', function (event) {
     const element = event.target;
-    const value = element.value;
+    const value= element.value;
     if (!element.matches('button')) return;
-    switch (value) {
+    switch(value){
         case '+':
         case '-':
         case '*':
@@ -23,47 +23,50 @@ keys.addEventListener('click', function (event) {
         case '=':
             handleOperator(value);
             break;
-
-            case '.':
-                inputDecimal();
-                break;
-
-                case 'clear':
-                clearDisplay();
-                break;
+        
+        case '.':
+            inputDecimal();
+            break;
+        
+        case 'clear':
+            clearDisplay();
+            break;
+        
         default:
             inputNumber(value);
-      }
-      
-    
+    }
 
     // if (element.classList.contains('operator')) {
     //     handleOperator(element.value);
-    //     updateDisplay();
     //     return;
     // }
     // if (element.classList.contains('decimal')) {
-    //     inpurDecimal();
-    //     updateDisplay();
+    //     inputDecimal();
     //     return;
     // }
     // if (element.classList.contains('clear')) {
     //     clearDisplay();
-    //     updateDisplay();
     //     return;
     // }
     // inputNumber(element.value);
+
 });
 
 function inputNumber(num) {
-    // displayValue +=num;
+    // displayValue=num;
     // displayValue += num;
-    if (waitingForSecond) {
+    if (waitingForSecondValue) {
         displayValue = num;
-        updateDisplay();
         waitingForSecondValue = false;
+    } else {
+        displayValue = displayValue == '0' ? num : displayValue + num;
     }
-    displayValue = displayValue == '0' ? num : displayValue + num;
+    updateDisplay();
+    // console.clear();
+    // console.log('First Value :', firstValue);
+    // console.log('Operator:', operator);
+    // console.log('Waiting For Second Value:', waitingForSecondValue);
+    // console.log('Display Value:', displayValue);
 }
 
 function inputDecimal() {
@@ -71,14 +74,13 @@ function inputDecimal() {
         displayValue += '.';
         updateDisplay();
     }
-
 }
 
 function clearDisplay() {
+    displayValue = '0';
     firstValue = null;
     operator = null;
     waitingForSecondValue = false;
-    displayValue = '0';
     updateDisplay();
 }
 
@@ -88,22 +90,22 @@ function handleOperator(nextOperator) {
         operator = nextOperator;
         return;
     }
-    if (operator) {
-        operator = nextOperator;
-        return;
-    }
     if (firstValue == null) {
         firstValue = value;
-
     } else if (operator) {
-        //Hesaplama işlemleri yapılabilir.
         const result = calculate(firstValue, operator, value);
-        displayValue = String(result);
+        displayValue = `${parseFloat(result.toFixed(7))}`;
         firstValue = result;
     }
     waitingForSecondValue = true;
     operator = nextOperator;
-    console.log(firstValue, nextOperator, operator, value, result);
+    updateDisplay();
+    // console.clear();
+    // console.log('First Value :', firstValue);
+    // console.log('Operator:', operator);
+    // console.log('Waiting For Second Value:', waitingForSecondValue);
+    // console.log('Display Value:', displayValue);
+    // console.log('Next Operator:', nextOperator);
 }
 function calculate(num1, op, num2) {
     if (op === '+') return num1 + num2;
