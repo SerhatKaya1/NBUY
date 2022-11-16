@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "About";
+}
+<h1>About page</h1>
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jwuery.min.js"></script>
+}
+
+
+
+<div>
+    @foreach (var isim in (List<string>)ViewData["Adlar"])
+    {
+        <p>@isim</p>
+    }
+
+</div>
+ 
+<div>
+    @foreach (var bolum in ViewBag.Bolumler)
+    {
+        <p>@bolum</p>
+    }
+    
+</div>
+

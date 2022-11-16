@@ -1,0 +1,13 @@
+@model List<Proj04_mvc.Controllers.Category>
+@{
+    ViewData["Title"] = "GetCategories";
+}
+@{
+    var products = Model;   /* verinin tipini veriyor*/
+    }
+<h1>All Categories</h1>
+
+@foreach (var c in Model)
+{
+    <li>@c.Id</li>
+}
