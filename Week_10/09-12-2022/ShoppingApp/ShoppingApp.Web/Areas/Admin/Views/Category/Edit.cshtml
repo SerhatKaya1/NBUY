@@ -1,0 +1,46 @@
+﻿@model CategoryUpdateDto
+<h1>Yeni Kategıri Ekleme</h1>
+<form asp-area="Admin"
+      asp-controller="Category"
+      asp-action="Edit"
+      method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <div class="row">
+        <div class="row">
+
+            <div class="col-4">
+                <form>
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label"></label>
+                        <input class="form-control" asp-for="Name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Description" class="form-label"></label>
+                        <input class="form-control" asp-for="Description">
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Url" class="form-label"></label>
+                        <input class="form-control" asp-for="Url">
+                        <span asp-validation-for="Url" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                    <div class="mb-3">
+                        <span asp-validation-for="Url" class="text-danger"></span>
+                    </div>
+                    <button type="sil" class="btn btn-primary">Sil</button>
+                    <div class="mb-3">
+                        <span asp-validation-for="Url" class="text-danger"></span>
+                    </div>
+                    <button type="degisiklikleri kaydet" class="btn btn-primary">Değişiklikleri Kaydet</button>
+                   
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</form>

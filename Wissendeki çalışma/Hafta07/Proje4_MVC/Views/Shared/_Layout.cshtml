@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+@* BU sayfa web sayfasının yerleşimini düzenlemek için kullanılir. *@
+@*<partial name="_Header" />  burada header.cshml partial viewini çağırıyoruz. senkron(aynı anda yazdığın tüm kodları çalıştırır.) şeklinde çalışır. *@
+ @await Html.PartialAsync("_Header")  @* burası yukadakinin aynsını yapar ama tek farkı asenkron(aynı anda birçok işlem çalışmaz. bu kod tek çalışır bitince diğer koda geçer.) şeklinde yapar.*@
+<body>
+@await RenderSectionAsync("FirstSection",false)
+<partial name="_HeaderNavbar" /> @* burada Navbar.cshml'i çağırıyoruz. *@
+ 
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody() 
+            @* @RenderBody() viexleri çağırmak için kullanılır. *@
+        </main>
+    </div>
+    
+    <partial name ="_Footer" /> @* burada Footer.cshml'i çağırıyoruz. *@
+    
+    @await RenderSectionAsync("Scripts", required: false)    @* sadece isteiğim yerlerde script yazmamı sağlar(required'ın false olması sağlar.)örneğn about'da section script gibi*@
+
+</body>
+
+</html>
