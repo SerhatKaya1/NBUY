@@ -9,6 +9,5 @@ namespace Proje05_MVC_EfCore_CodeFirst.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-      
     }
 }

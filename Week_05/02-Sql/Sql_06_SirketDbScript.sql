@@ -111,3 +111,7 @@ INSERT INTO Projeler(ad, baslamaTarihi, planlananBitisTarihi) VALUES
 	('Kirli Kadýköy', '2022-5-5', '2022-8-5'),
 	('Haydi Gençler Elele', '2022-5-5', '2022-8-5')
 
+
+
+	USE SirketDb2
+	INSERT INTO Departmanlar(ad) VALUES ('Yeni departman')

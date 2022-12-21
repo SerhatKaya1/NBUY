@@ -3,7 +3,6 @@ using ShoppingApp.Business.Abstract;
 using ShoppingApp.Core;
 using ShoppingApp.Entity.Concrete;
 using ShoppingApp.Web.Areas.Admin.Models.Dtos;
-using System.Security.Cryptography.X509Certificates;
 
 namespace ShoppingApp.Web.Areas.Admin.Controllers
 {
@@ -11,8 +10,6 @@ namespace ShoppingApp.Web.Areas.Admin.Controllers
     public class CategoryController : Controller
     {
         private readonly ICategoryService _categoryService;
-
-
 
         public CategoryController(ICategoryService categoryService)
         {
@@ -28,13 +25,15 @@ namespace ShoppingApp.Web.Areas.Admin.Controllers
             };
             return View(categoryListDto);
         }
+
         [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
+
         [HttpPost]
-        public async Task<IActionResult> CreateAsync(CategoryAddDto categoryAddDto)
+        public async Task<IActionResult> Create(CategoryAddDto categoryAddDto)
         {
             if (ModelState.IsValid)
             {
@@ -45,28 +44,30 @@ namespace ShoppingApp.Web.Areas.Admin.Controllers
                     Url = Jobs.InitUrl(categoryAddDto.Name)
                 };
                 await _categoryService.CreateAsync(category);
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index");
+                
             }
             return View();
         }
+
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
             var category = await _categoryService.GetByIdAsync(id);
-            if (category == null)
+            if (category==null)
             {
-
                 return NotFound();
             }
             var categoryUpdateDto = new CategoryUpdateDto
             {
-                Id= category.Id,
+                Id=category.Id,
                 Name = category.Name,
                 Description = category.Description,
                 Url = category.Url
             };
             return View(categoryUpdateDto);
         }
+
         [HttpPost]
         public async Task<IActionResult> Edit(CategoryUpdateDto categoryUpdateDto)
         {
@@ -77,28 +78,27 @@ namespace ShoppingApp.Web.Areas.Admin.Controllers
                 {
                     return NotFound();
                 }
+                category.Name=categoryUpdateDto.Name;
+                category.Description=categoryUpdateDto.Description;
+                category.Url = Jobs.InitUrl(categoryUpdateDto.Name);
 
-                category.Name = categoryUpdateDto.Name;
-                category.Description = categoryUpdateDto.Description;
-                category.Url =Jobs.InitUrl(categoryUpdateDto.Name);
-                
                 _categoryService.Update(category);
                 return RedirectToAction("Index");
+
             }
-            return View();
+            return View(categoryUpdateDto);
         }
 
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
             var category = await _categoryService.GetByIdAsync(id);
-            if (category== null)
+            if (category == null)
             {
                 return NotFound();
             }
             _categoryService.Delete(category);
             return RedirectToAction("Index");
-            // index action a git ve çalıştır.
         }
     }
 }

@@ -13,14 +13,13 @@ namespace Proje05_MVC_EfCore_CodeFirst.Controllers
 {
     public class ProductController : Controller
     {
-
         public IActionResult Index()
         {
-            MyDbContext context  = new MyDbContext(); /*Context üzerinden */
-        List<Product> products=context
-        .Products
-        .Include(p=> p.Category)
-        .ToList();
+            MyDbContext context = new MyDbContext();
+            List<Product> products = context
+                .Products
+                .Include(p=>p.Category)
+                .ToList();
             return View(products);
         }
     }

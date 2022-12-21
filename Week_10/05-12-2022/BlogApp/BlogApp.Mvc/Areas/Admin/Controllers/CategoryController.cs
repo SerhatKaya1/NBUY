@@ -22,7 +22,7 @@ namespace BlogApp.Mvc.Areas.Admin.Controllers
         
         public async Task<IActionResult> Index()
         {
-            var result = await _categoryService.GetAll();
+            var result = await _categoryService.GetAllByNonDeleted();
             if (result.ResultStatus==ResultStatus.Success)
             {
                 return View(result.Data);
@@ -58,7 +58,7 @@ namespace BlogApp.Mvc.Areas.Admin.Controllers
         
         public async Task<JsonResult> GetAllCategories()
         {
-            var result = await _categoryService.GetAll();
+            var result = await _categoryService.GetAllByNonDeleted();
             var resultJson =  JsonSerializer.Serialize(result.Data, new JsonSerializerOptions
             {
                 ReferenceHandler = ReferenceHandler.Preserve

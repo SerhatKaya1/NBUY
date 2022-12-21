@@ -19,6 +19,7 @@
             <i class="fas fa-table mr-1"></i>
             Kategoriler
         </div>
+        <button class="btn btn-success" id="btnEkle">Ekle</button>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="categoriesTable" width="100%" cellspacing="0">
@@ -96,7 +97,7 @@
             $(function(){
                 const url = '@Url.Action("Add","Category")';
                 const placeHolderDiv = $('#modalPlaceHolder');
-                $('#btnAdd').click(function(){
+                $('#btnEkle').click(function(){
                     $.get(url).done(function(data){
                         placeHolderDiv.html(data);
                         placeHolderDiv.find(".modal").modal('show');

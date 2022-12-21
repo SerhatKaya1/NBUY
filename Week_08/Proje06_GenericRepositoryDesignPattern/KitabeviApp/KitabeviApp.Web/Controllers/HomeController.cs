@@ -246,7 +246,7 @@ public class HomeController : Controller
     //    return View("Index", kitapListViewModels);
 
     //}
-    //public IActionResult Detay(int id)
+    //public IActionResult Detay(int shmet)
     //{
     //    var kitap = context
     //        .Kitaplar

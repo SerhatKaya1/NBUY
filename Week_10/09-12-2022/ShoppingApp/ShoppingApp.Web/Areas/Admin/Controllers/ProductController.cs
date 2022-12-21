@@ -1,29 +1,43 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ShoppingApp.Business.Abstract;
 using ShoppingApp.Entity.Concrete;
+using ShoppingApp.Web.Areas.Admin.Models.Dtos;
 
 namespace ShoppingApp.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class ProductController : Controller
     {
-        private readonly IProductService productService;
-        private readonly ICategoryService categoryService;
-        private object _productService;
+        private readonly IProductService _productService;
+        private readonly ICategoryService _categoryService;
 
-        public async IActionResult Index()
+        public ProductController(IProductService productService, ICategoryService categoryService)
         {
-            var products = await _productService.GetAllProduct();
+            _productService = productService;
+            _categoryService = categoryService;
+        }
 
+        public async Task<IActionResult> Index()
+        {
+            var products = await _productService.GetProductsWithCategories();
             var productListDto = products
-                .Select(pc => new Category
+                .Select(p => new ProductListDto
                 {
-                    .Select(pc => pc.Category)
+                    Product = p
+                }).ToList();
+     
+            return View(productListDto);
+        }
 
-                })
-
-
-            return View();
+        [HttpGet]
+        public async Task<IActionResult> Create()
+        {
+            var categories = await _categoryService.GetAllAsync();
+            var productAddDto = new ProductAddDto
+            {
+                Categories = categories
+            };
+            return View(productAddDto);
         }
     }
 }

@@ -11,9 +11,8 @@ namespace Proje05_MVC_EfCore_CodeFirst.Models
         public string Name { get; set; }
         public string Desc { get; set; }
         public decimal Price { get; set; }
-
         public int CategoryId { get; set; }
-        public Category Category { get; set; } /*CategoryId si ne ise onun değerini bize verecek.*/
-
+        public Category Category { get; set; }
+        
     }
 }

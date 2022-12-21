@@ -19,7 +19,8 @@ namespace ShoppingApp.Data.Concrete.EfCore.Repositories
         private ShopAppContext ShopAppContext
         {
             get { return _context as ShopAppContext;  }
-        }    
+        }
+                
         public async Task<List<Product>> GetHomePageProductsAsync()
         {
             return await ShopAppContext
@@ -27,6 +28,7 @@ namespace ShoppingApp.Data.Concrete.EfCore.Repositories
                 .Where(p => p.IsHome && p.IsApproved)
                 .ToListAsync();
         }
+
         public Task<Product> GetProductDetailsByUrlAsync(string productUrl)
         {
             return ShopAppContext
@@ -36,6 +38,7 @@ namespace ShoppingApp.Data.Concrete.EfCore.Repositories
                 .ThenInclude(pc => pc.Category)
                 .FirstOrDefaultAsync();
         }
+
         public async Task<List<Product>> GetProductsByCategoryAsync(string category)
         {
             var products= ShopAppContext.Products.AsQueryable();
@@ -48,14 +51,17 @@ namespace ShoppingApp.Data.Concrete.EfCore.Repositories
                     .Where(p => p.ProductCategories.Any(pc => pc.Category.Url == category));
             }
             return await products.ToListAsync();
+
+
         }
-        public Task<List<Product>> GetProductsWithCategories()
+
+        public async Task<List<Product>> GetProductsWithCategories()
         {
-            return ShopAppContext
+            return await ShopAppContext
                 .Products
-                .Include(p=>p.ProductCategories)
+                .Include(p => p.ProductCategories)
                 .ThenInclude(pc => pc.Category)
-                .ToListAsync() ;
+                .ToListAsync();
         }
     }
 }

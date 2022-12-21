@@ -1,11 +1,21 @@
 ﻿using Proje02_DatabaseFirst;
 using Proje02_DatabaseFirst.efcore;
 
-
 var mt = new MultiTable();
-mt.MusteriSayisi();
-mt.SatisYapilanMusteriler();
-mt.SatisYapilmayanMusteriler();
+// mt.MusteriSayisi();
+// mt.SatisYapilanMusteriler();
+// mt.SatisYapilmayanMusteriler();
+mt.MusteriSatisListesi();
+
+
+
+
+
+
+
+
+
+
 
 // NorthwindContext context = new NorthwindContext();
 
@@ -91,120 +101,127 @@ mt.SatisYapilmayanMusteriler();
 // }
 // Console.WriteLine($"Toplam satış sayısı: {ordersOfNancy.Count()}");
 
-//Productları ID'ye göre büyükten küçüğe doğru listeleyelim.
+//Productları ID'ye göre büyükten küçüğe sıralı bir şekilde listeleyelim
 // var products = context
-// .Products
-// .OrderByDescending(p=>p.ProductId)   /*sırala demek (order by). her product ın ıd sine bakacak. Bu tablonun her satırındaki id ye bak
-// p=>p.ProductId  her product için p ye bak demek. ıd si büyük olan en son kayıt olmuştur.
-// */
-// .ToList();
+//     .Products
+//     .OrderByDescending(p=>p.ProductId)
+//     .ToList();
 
 // foreach (var p in products)
 // {
 //     Console.WriteLine($"{p.ProductId} / {p.ProductName}");
 // }
 
-
-//En son satılan 5 ürünü getirelim
-
+//En son satılan 5 ürünü listeleyelim
 // var products = context
-// .Products
-// .OrderByDescending(p=>p.ProductId)
-// .Take(5)  /*5 tane ürünü al demek sırayı çevirdikten sonra ilk 6*/
-// .ToList();
+//     .Products
+//     .OrderByDescending(p=>p.ProductId)
+//     .Take(5)
+//     .ToList();
 
 // foreach (var p in products)
 // {
 //     Console.WriteLine($"{p.ProductId} / {p.ProductName}");
 // }
 
-//Fiyarı 10 ile 20 arasında olan ürünlerin adını ve fiyatını getirip listeleyelim, Fiyata göre küçükten büyüğe sıralayınız.
-
+//Fiyatı 10 ile 20 arasında olan ürünlerin adını ve fiyatını getirip listeleyelim, fiyata göre küçükten büyüğe sıralayalım
 // var products = context
-// .Products
-// .OrderBy(p=>p.UnitPrice)
-// .Where(p=>p.UnitPrice>=10 && p.UnitPrice<=20)
-// .Select(p=> new {
-//     p.ProductName,
-//     p.UnitPrice
-// })
-// .ToList();
-
-/*order by her satırda kullanılabilir.*/
+//     .Products
+//     .Where(p=>p.UnitPrice>=10 && p.UnitPrice<=20)
+//     .Select(p=> new {
+//         p.ProductName,
+//         p.UnitPrice
+//     })
+//     .OrderBy(p=>p.UnitPrice)
+//     .ToList();
 
 // foreach (var p in products)
 // {
 //     Console.WriteLine($"{p.ProductName} --> {p.UnitPrice}");
 // }
 
-/*sintx lar farklı olduğu için esnek yazım formatlarına sahiptir.ToList e çevirmeden önce kullanırız genelde.Veririmlilik artar.
-To list execute görevi görür . To list den sonra yapılması sorunlar meydana getirebilir.*/
-
-//Baverages kategorisindeki ürünlerin ortalama fiyatını yazdıralım.
-
+//Beverages kategorisindeki ürünlerin ortalama fiyatını ekrana yazdıralım.
 // var ortalama = context
-// .Products
-// .Where(p=>p.Category.CategoryName=="Baverages")
-// .Average(p=>p.UnitPrice);
+//     .Products
+//     .Where(p=>p.Category.CategoryName=="Beverages")
+//     .Average(p=>p.UnitPrice);
 
-// Console.WriteLine($"Baverages Fiyat Ortalaması: {ortalama}");
+// Console.WriteLine($"Beverages Fiyat Ortalaması: {ortalama}");
 
-//Beverages kategorisindek ürün adedi
-
+// //Beverages kategorisindeki ürün adedi
 // var adet = context
-// .Products
-// .Where(p=>p.Category.CategoryName=="Baverages")
-// .Count();
-// .Count(p=>p.Category.CategoryName=="Baverages");
-// Console.WriteLine($"Baverages Ürün Adeti: {adet}");
+//     .Products
+//     // .Where(p=>p.Category.CategoryName=="Beverages")
+//     // .Count();
+//     .Count(p=>p.Category.CategoryName=="Beverages");
+// Console.WriteLine($"Beverages Ürün Adedi: {adet}");
 
-//Baverages ve Condiment kategorilerinde kaç adet ürün vardır.
+//Beverages ve Condiments kategorilerinde toplam kaç adet ürün vardır?
+// var adet = context
+//     .Products
+//     .Count(p=>p.Category.CategoryName=="Beverages" ||p.Category.CategoryName=="Condiments");
+//     Console.WriteLine($"B&C adet: {adet}");
 
-// var adet= context  
-// .Products
-// .Count(p=>p.Category.CategoryName=="Baverages" || p.Category.CategoryName== Condiment);
-
-// Console.WriteLine($"Baverages Ürün Adeti: {adet}");
-
-
-//adının içinde tofu geçen ürünleri listeleyelim
+//Adının içinde tofu geçen ürünleri listeleyelim
 // var products = context
-// .Products
-// .Where(p=>p.ProductName.Contains("tofu"))
-// .ToList(); 
+//     .Products
+//     .Where(p=>p.ProductName.Contains("tofu"))
+//     .ToList();
 // foreach (var p in products)
 // {
 //     Console.WriteLine($"{p.ProductName}");
 // }
 
-
-//en ucuz ve en pahalı ürünler hangileridir?
+//En ucuz ve en pahalı ürünler hangileridir?
 // var minPrice = context.Products.Min(p=>p.UnitPrice);
 // var maxPrice = context.Products.Max(p=>p.UnitPrice);
 
 // var minProduct = context
-// .Products
-// .Where(p=>p.UnitPrice==minPrice)
-// .Select(p=>new{
-//      p.ProductName,
-//      p.UnitPrice
-//  }).FirstOrDefault();
-
-// Console.WriteLine($"minPrice {minPrice} --> Product: {minProduct.ProductName}-{minProduct.UnitPrice}");
-
+//     .Products
+//     .Where(p=>p.UnitPrice==minPrice)
+//     .Select(p=>new {
+//         p.ProductName,
+//         p.UnitPrice
+//     }).FirstOrDefault();
 
 // var maxProduct = context
-// .Products
-// .Where(alex=>alex.UnitPrice==minPrice)
-// .Select(hoijdoonk => new{
-//      hoijdoonk.ProductName,
-//      hoijdoonk.UnitPrice,
-     
-//  }).FirstOrDefault();
+//     .Products
+//     .Where(alex=>alex.UnitPrice==maxPrice)
+//     .Select(hooijdonk=> new {
+//         hooijdonk.ProductName,
+//         hooijdonk.UnitPrice
+//     }).FirstOrDefault();
 
-// Console.WriteLine($"MinPrice {minPrice} --> Product: {minProduct.ProductName}-{minProduct.UnitPrice}");
-// Console.WriteLine($"MaxPrice {minPrice} --> Product: {minProduct.ProductName}-{minProduct.UnitPrice}");
 
+
+// Console.WriteLine($"MinPrice: {minPrice} --> Product: {minProduct.ProductName}-{minProduct.UnitPrice}");
+// Console.WriteLine($"MaxPrice: {maxPrice} --> Product: {maxProduct.ProductName}-{maxProduct.UnitPrice}");
+
+// var minPrice = context.Products.Min(p=>p.UnitPrice);
+// var maxPrice = context.Products.Max(p=>p.UnitPrice);
+
+// var minProducts = context
+//     .Products
+//     .Where(p=>p.UnitPrice==minPrice)
+//     .Select(p=>new {
+//         p.ProductName
+//     }).ToList();
+// var maxProducts = context
+//     .Products
+//     .Where(p=>p.UnitPrice==maxPrice)
+//     .Select(p=>new {
+//         p.ProductName
+//     }).ToList();
+// Console.WriteLine($"En Ucuz({minPrice}) fiyatlı ürünlerin listesi:");
+// foreach (var p in minProducts)
+// {
+//     Console.WriteLine(p.ProductName);
+// }
+// Console.WriteLine($"En Pahalı({maxPrice}) fiyatlı ürünlerin listesi:");
+// foreach (var p in maxProducts)
+// {
+//     Console.WriteLine(p.ProductName);
+// }
 
 // class CustomerModel
 // {
@@ -214,31 +231,3 @@ To list execute görevi görür . To list den sonra yapılması sorunlar meydana
 // }
 
 
-// var minProducts = context
-// .Products
-// .Where(p=>p.UnitPrice==minPrice)
-// .Select(p=>new{
-//      p.ProductNamae
-//  }).ToList();
-// Console.WriteLine($"{minPrice} fiyatlı ürünlerin listesi");
-// foreach (var p in minProducts)
-// {
-//     Console.WriteLine(p.ProductName);
-// }
-
-
-// var maxProducts = context
-// .Products
-// .Where(p=>p.UnitPrice==maxPrice)
-// .Select(p=>new{
-//      p.ProductNamae
-//  }).ToList();
-// Console.WriteLine($"{maxPrice} fiyatlı ürünlerin listesi");
-// foreach (var p in minProducts)
-// {
-//     Console.WriteLine(p.ProductName);
-// }
-/*
-NOTLAR : 
-listeleri tanımlarken forech yapısını kullanıyoruz.
-*/

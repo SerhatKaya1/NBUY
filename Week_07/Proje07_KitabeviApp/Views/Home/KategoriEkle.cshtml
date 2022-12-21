@@ -1,26 +1,25 @@
-@model Kategori;
+@model Kategori
 @{
-    ViewData["Title"] = "KategoriEkle";
+    ViewData["Title"] = "Kategori Ekle";
 }
 
 <h1 class="display-6">Yeni Kategori Oluştur</h1>
 <hr>
-<form asp-controller="Home"></form>
-<form method="post">
+<form asp-controller="Home" asp-action="KategoriEkle" method="post">
     <div class="row mb-2">
         <div class="col-2">
             <label class="form-label" asp-for="Ad"></label>
         </div>
         <div class="col-4">
-            <input type="text" asp-for="Ad">
+            <input class="form-control" type="text" asp-for="Ad">
         </div>
     </div>
     <div class="row mb-2">
         <div class="col-2">
-            <label class="form-label" asp-for="Aciklama">Aciklama</label>
+            <label class="form-label" asp-for="Aciklama"></label>
         </div>
-        <div class="col-4 offset-2">
-            <input type="text" asp-for="Aciklama">
+        <div class="col-4">
+            <input class="form-control" type="text" asp-for="Aciklama">
         </div>
     </div>
     <div class="row mb-2">
@@ -28,7 +27,4 @@
             <input class="btn btn-primary" type="submit" value="Kaydet">
         </div>
     </div>
-    
 </form>
-
-

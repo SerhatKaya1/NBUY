@@ -1,5 +1,4 @@
-@model List<Product> /*Doğru bir tipi tanımlamaya dikkat et.*/
-
+@model List<Product>
 @{
     ViewData["Title"] = "Index";
 }
@@ -24,7 +23,7 @@
                 <td>@p.Name</td>
                 <td>@p.Desc</td>
                 <td>@p.Price</td>
-                <td>@p.Category.Name</td>
+                @* <td>@p.Category.Name</td> *@
             </tr>
         }
     </tbody>

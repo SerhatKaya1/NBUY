@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+@* Burada _Header.cshtml partial viewını çağırıyoruz. *@
+@* <partial name="_Header" /> *@
+@await Html.PartialAsync("_Header")
+
+<body>
+    @await RenderSectionAsync("FirstSection", false)
+    <partial name="_HeaderNavBar" />
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <partial name="_Footer" />
+    
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

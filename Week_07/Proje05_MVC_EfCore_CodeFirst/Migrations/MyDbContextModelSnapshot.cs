@@ -70,17 +70,17 @@ namespace Proje05_MVC_EfCore_CodeFirst.Migrations
                         new
                         {
                             Id = 34,
-                            Name = "Istanbul"
+                            Name = "İstanbul"
                         },
                         new
                         {
                             Id = 35,
-                            Name = "Izmir"
+                            Name = "İzmir"
                         },
                         new
                         {
-                            Id = 36,
-                            Name = "Canakkale"
+                            Id = 18,
+                            Name = "Çanakkale"
                         });
                 });
 
@@ -111,7 +111,7 @@ namespace Proje05_MVC_EfCore_CodeFirst.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            Desc = "Güzelbir telefon",
+                            Desc = "Güzel bir telefon",
                             Name = "IPhone 13",
                             Price = 19000m
                         },
@@ -119,25 +119,25 @@ namespace Proje05_MVC_EfCore_CodeFirst.Migrations
                         {
                             Id = 2,
                             CategoryId = 2,
-                            Desc = "Güzel PC",
-                            Name = "Dell Xs",
-                            Price = 29000m
+                            Desc = "Güzel bir bilgisayar",
+                            Name = "Dell Xside",
+                            Price = 15000m
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 1,
-                            Desc = "Güzel camera",
-                            Name = "Samsung Xs",
-                            Price = 39000m
+                            Desc = "Kamerası çok güzel",
+                            Name = "Samsung A71",
+                            Price = 17000m
                         },
                         new
                         {
                             Id = 4,
                             CategoryId = 3,
-                            Desc = "Güzel ses",
+                            Desc = "Her yerde ses",
                             Name = "Piranha X13",
-                            Price = 49000m
+                            Price = 1000m
                         });
                 });
 #pragma warning restore 612, 618

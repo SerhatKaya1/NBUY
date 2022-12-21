@@ -14,7 +14,7 @@ class Program
         {
             try
             {
-                connection.Open();  
+                connection.Open();
                 Console.WriteLine("Bağlantı sağlandı!");
                 string queryString = "SELECT * FROM Products";
                 SqlCommand sqlCommand = new SqlCommand(queryString, connection);
@@ -37,9 +37,3 @@ class Program
         }
     }
 }
-/*
-DERS NOTLARI : 
-connection.Open(); : bağlantıyı aç demek.
-
-
-*/

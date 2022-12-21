@@ -1,6 +1,0 @@
-BURADA YAPILAN ÇALIÞMALARA AÝT NOTLAR YER ALMAKTADIR .
-index.cshtml dosyasýnda 
-*Baþlýklarý ekledik .
-*Düzenle ve Sil classlarýný oluþturduk.
-* tr ve th ler ile baþlýklarýmý ekledim .
-* Category Controller-- 

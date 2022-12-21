@@ -54,18 +54,39 @@ public class HomeController : Controller
             .FirstOrDefault();
         return View(kitap);
     }
+    public IActionResult KategoriEkle()
+    {
+        return View();
+    }
+    [HttpPost]
     public IActionResult KategoriEkle(Kategori kategori)
     {
         context.Kategoriler.Add(kategori);
         context.SaveChanges();
-        return RedirectToAction("KategoryListesi");
+        return RedirectToAction("KategoriListesi");
+    }
+
+    public IActionResult YazarEkle()
+    {
+        return View();
     }
     [HttpPost]
-     public IActionResult YazarEkle(Yazar Author)
+    public IActionResult YazarEkle(Yazar yazar)
     {
-        context.Yazarlar.Add(Author);
+        context.Yazarlar.Add(yazar);
         context.SaveChanges();
         return RedirectToAction("YazarListesi");
     }
-    /*HttpGet, HttpPost, HttpPut, HttpDelete metotlarını araştırın*/
+
+    public IActionResult KitapEkle()
+    {
+        ViewBag.Kategoriler = context.Kategoriler.ToList();
+        return View();
+    }
+    [HttpPost]
+    public IActionResult KitapEkle(Kitap kitap)
+    {
+        return View();
+    }
+    //HttpGet, HttpPost, HttpPut, HttpDelete metotlarını araştırın.
 }

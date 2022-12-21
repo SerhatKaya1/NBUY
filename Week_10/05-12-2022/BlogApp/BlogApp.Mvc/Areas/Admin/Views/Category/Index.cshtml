@@ -91,7 +91,7 @@
                                 url:'@Url.Action("GetAllCategories","Category")',
                                 contentType:'application/json',
                                 beforeSend: function(){
-                                    $('#categoriesTable').fadeOut(1500);
+                                    $('#categoriesTable').hide();
                                     $('.spinner-border').show();
                                 },
                                 success: function(data){
@@ -102,22 +102,28 @@
                                         let tableBody='';
                                         $.each(categoryListDto.Categories.$values, 
                                             function(index,category){
+                                                console.log("Kategoriler: ",category);
                                             tableBody+=`
-                                            <tr>
-                                                <td>${category.Id}</td>
-                                                <td>${category.Name}</td>
-                                                <td>${category.Description}</td>
-                                                <td>${convertFirstLetterToUpperCase(category.IsActive)}</td>
-                                                <td>${convertFirstLetterToUpperCase(category.IsDeleted)}</td>
-                                                <td>${category.Note ?? ""}</td>
-                                                <td>${convertToShortDate(category.CreatedDate)}</td>
-                                                <td>${category.CreatedByName}</td>
-                                            </tr>
+                <tr name="${category.Id}">
+                    <td>${category.Id}</td>
+                    <td>${category.Name}</td>
+                    <td>${category.Description}</td>
+                    <td>${convertFirstLetterToUpperCase(category.IsActive)}</td>
+                    <td>${convertFirstLetterToUpperCase(category.IsDeleted)}</td>
+                    <td>${category.Note ?? ""}</td>
+                    <td>${convertToShortDate(category.CreatedDate)}</td>
+                    <td>${category.CreatedByName}</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm"><span class="fas fa-edit text-white"></span></button>
+                        <button class="btn btn-danger btn-sm btn-delete" data-id="${category.Id}"><span class="fas fa-minus-circle"></span></button>
+                    </td>
+                </tr>
                                             `;
                                         });
                                         $('#categoriesTable > tbody').replaceWith(tableBody);
                                         $('.spinner-border').hide();
                                         $('#categoriesTable').fadeIn(1500);
+                                        
                                     }else{
                                         toastr.error(`${categoryListDto.Message}`, 'İşlem başarısız!');
                                     }

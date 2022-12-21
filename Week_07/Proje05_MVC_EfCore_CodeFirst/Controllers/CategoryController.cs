@@ -13,7 +13,7 @@ namespace Proje05_MVC_EfCore_CodeFirst.Controllers
     {
         public IActionResult Index()
         {
-            MyDbContext context = new MyDbContext(); /*Context üzerinden */
+            MyDbContext context = new MyDbContext();
             List<Category> categories = context.Categories.ToList();
             return View(categories);
         }
