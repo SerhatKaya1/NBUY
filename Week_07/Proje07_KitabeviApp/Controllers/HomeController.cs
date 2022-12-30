@@ -8,7 +8,7 @@ namespace KitabeviApp.Controllers;
 public class HomeController : Controller
 {
     KitabeviContext context = new KitabeviContext();
-    public IActionResult Index()
+    public IActionResult Index() //Get
     {
         return View();
     }

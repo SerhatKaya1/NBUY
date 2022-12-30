@@ -1,0 +1,11 @@
+﻿<form asp-area="Admin"
+      asp-controller="Product"
+      asp-action="SearchProduct" class="d-flex justify-content-end">
+      <select asp-for="SearchQueryDto.IsHome" asp-items="@Model.IsHomeList" class="form-select me-2" onchange="document.getElementById('formSearch').submit();"></select>
+
+    <select asp-for="SearchQueryDto.IsApproved" asp-items="@Model.IsHomeList" class="form-select me-2" onchange="document.getElementById('formSearch').submit();"></select>
+    
+    <select asp-for="IsHome" class="form-select me-2" </select>
+    <input class="form-control me-2" asp-for="SearchString" type="search" placeholder="Ara..." />
+    <button class="btn btn-outline-succes" type="submit">Ara</button>
+</form>
