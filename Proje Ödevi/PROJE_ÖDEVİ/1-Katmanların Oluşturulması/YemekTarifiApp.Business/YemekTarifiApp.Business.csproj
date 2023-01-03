@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\YemekTarifiApp.Data\YemekTarifiApp.Data.csproj" />
+    <ProjectReference Include="..\YemekTarifiApp.Entity\YemekTarifiApp.Entity.csproj" />
+  </ItemGroup>
+
+</Project>
