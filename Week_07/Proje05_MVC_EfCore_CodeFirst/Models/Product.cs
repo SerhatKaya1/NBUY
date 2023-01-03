@@ -5,14 +5,14 @@ using System.Threading.Tasks;
 
 namespace Proje05_MVC_EfCore_CodeFirst.Models
 {
-    public class Product
+    public class Product  //Bir ürün birden fazla kategoride olabilir.
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Desc { get; set; }
         public decimal Price { get; set; }
         public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        public Category Category { get; set; } //Bir ürün birden fazla kategoride sınıfında olabilir. Product sınıfının içerisine Category sınıfını ekliyorum ki ilişki kuralım.
         
     }
 }

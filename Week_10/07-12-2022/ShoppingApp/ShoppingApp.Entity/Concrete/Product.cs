@@ -18,6 +18,7 @@ namespace ShoppingApp.Entity.Concrete
         public bool IsHome { get; set; }
         public bool IsApproved { get; set; }
         public DateTime DateAdded { get; set; }
-        public List<ProductCategory> ProductCategories { get; set; }
+        public List<ProductCategory> ProductCategories { get; set; } //Bir Product da birden fazla ProductCategories olabilir.
     }
+    //Bu sayfada bir'e çokları yazdık.
 }

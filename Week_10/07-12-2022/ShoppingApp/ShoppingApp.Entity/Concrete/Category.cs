@@ -13,6 +13,9 @@ namespace ShoppingApp.Entity.Concrete
         public string Name { get; set; }
         public string Description { get; set; }
         public string Url { get; set; }
-        public List<ProductCategory> ProductCategories { get; set; }
+        public List<ProductCategory> ProductCategories { get; set; } //Bir kategoride birden fazla ProductCategory Olabilir.
+        //Bu sayfada 1 e çokları yazdık.
     }
 }
+
+

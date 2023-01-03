@@ -18,7 +18,7 @@
     <tbody>
         @foreach (var k in Model)
         {
-            <tr>
+             <tr>
                 <td>@k.Id</td>
                 <td><a asp-controller="Home" asp-action="KitapListesi" asp-route-id=@k.Id>@k.Ad</a></td>
                 <td>@k.Aciklama</td>
