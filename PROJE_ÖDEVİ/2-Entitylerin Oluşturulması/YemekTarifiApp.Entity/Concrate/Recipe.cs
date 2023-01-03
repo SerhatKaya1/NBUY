@@ -16,7 +16,7 @@ namespace YemekTarifiApp.Entity.Concrate
         public string Owner { get; set; } //Yemek Sahibi
         public string OwnerMail { get; set; } //Yemek Sahibi Maili
         public int FoodId { get; set; } // Bir tarif bir yemekte olmak zorunda .
-        public Foot Foot { get; set; } //Bir tarif bir yemeğe ait olsun .
+        public Food Food { get; set; } //Bir tarif bir yemeğe ait olsun .
 
     }
 }

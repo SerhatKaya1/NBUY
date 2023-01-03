@@ -20,7 +20,7 @@ namespace YemekTarifiApp.Data.Concrete.EfCore.Contexts
         public DbSet<Category> Categories { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<FoodOfTheDay> FoodOfTheDays { get; set; }
-        public DbSet<Foot> Foots { get; set; }
+        public DbSet<Food> Foots { get; set; }
         public DbSet<Recipe> Recipes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YemekTarifiApp.Entity.Abstract;
+using YemekTarifiApp.Entity.Concrate;
 
 namespace YemekTarifiApp.Entity
 {
@@ -13,7 +14,6 @@ namespace YemekTarifiApp.Entity
         public string Name { get; set; }
         public int Qty { get; set; }
         public string Image { get; set; }
-
-        public List<Category> Categories { get; set;} //Bir category de birden fazla yemek olabilir.
+        public List<Food> Foods { get; set;} //Bir category'de birden fazla yemek olabilir.
     }
 }
