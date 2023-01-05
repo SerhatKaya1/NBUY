@@ -22,7 +22,7 @@ namespace ShoppingApp.Data.Config
 
             builder.Property(p => p.Description)
                 .IsRequired()
-                .HasMaxLength(500);
+                .HasMaxLength(1000);
 
             builder.Property(p => p.ImageUrl)
                 .IsRequired()
