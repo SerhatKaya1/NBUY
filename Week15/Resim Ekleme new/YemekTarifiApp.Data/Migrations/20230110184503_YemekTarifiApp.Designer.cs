@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using YemekTarifiApp.Data.Concrete.EfCore.Contexts;
 
@@ -10,9 +11,11 @@ using YemekTarifiApp.Data.Concrete.EfCore.Contexts;
 namespace YemekTarifiApp.Data.Migrations
 {
     [DbContext(typeof(YemekTarifiAppContext))]
-    partial class YemekTarifiAppContextModelSnapshot : ModelSnapshot
+    [Migration("20230110184503_YemekTarifiApp")]
+    partial class YemekTarifiApp
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.1");

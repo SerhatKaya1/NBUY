@@ -2,7 +2,6 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using YemekTarifiApp.Data.Concrete.EfCore.Contexts;
 
@@ -11,11 +10,9 @@ using YemekTarifiApp.Data.Concrete.EfCore.Contexts;
 namespace YemekTarifiApp.Data.Migrations
 {
     [DbContext(typeof(YemekTarifiAppContext))]
-    [Migration("20230109191853_YemekTarifiApp")]
-    partial class YemekTarifiApp
+    partial class YemekTarifiAppContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.1");
@@ -86,14 +83,14 @@ namespace YemekTarifiApp.Data.Migrations
                             Id = 6,
                             Description = "Salatalar bu Categoride bulunmaktadır",
                             Name = "Salatalar",
-                            Url = "Tatlılar"
+                            Url = "Salata Çesitleri"
                         },
                         new
                         {
                             Id = 7,
                             Description = "Tatlılar bu Categoride bulunmaktadır",
                             Name = "Tatlılar",
-                            Url = "Tatlılar"
+                            Url = "Tatlı Çesitleri"
                         },
                         new
                         {

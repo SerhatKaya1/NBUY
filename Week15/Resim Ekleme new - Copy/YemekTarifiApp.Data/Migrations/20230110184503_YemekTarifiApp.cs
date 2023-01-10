@@ -163,8 +163,8 @@ namespace YemekTarifiApp.Data.Migrations
                     { 3, "Tavuk Yemekleri bu Categoride bulunmaktadır", "Tavuk Yemekleri", "Tavuk Yemekleri" },
                     { 4, "Balık Yemekleri bu Categoride bulunmaktadır", "Balık Yemekleri", "Balık Yemekleri" },
                     { 5, "Zeytinyağlılar bu Categoride bulunmaktadır", "Zeytinyağlılar", "Zeytinyağlı Yemekler" },
-                    { 6, "Salatalar bu Categoride bulunmaktadır", "Salatalar", "Tatlılar" },
-                    { 7, "Tatlılar bu Categoride bulunmaktadır", "Tatlılar", "Tatlılar" },
+                    { 6, "Salatalar bu Categoride bulunmaktadır", "Salatalar", "Salata Çesitleri" },
+                    { 7, "Tatlılar bu Categoride bulunmaktadır", "Tatlılar", "Tatlı Çesitleri" },
                     { 8, "İçecekler bu Categoride bulunmaktadır", "İçecekler", "İçecekler" }
                 });
 
