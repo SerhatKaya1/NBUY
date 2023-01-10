@@ -8,11 +8,7 @@ namespace GetCountriesFromApi.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        
-
-        public async Task<IActionResult>  Index()
-
+        public async Task<IActionResult> Index()
         {
             List<Country> countryList = new List<Country>();
             using (var httpClient = new HttpClient())
@@ -21,17 +17,13 @@ namespace GetCountriesFromApi.Controllers
                 {
                    var stringResponse = await responce.Content.ReadAsStringAsync();
                    countryList = JsonSerializer.Deserialize<List<Country>>(stringResponse);
-                    foreach (var cml in Country)
+                    foreach (var cl in countryList)
                     {
-                        return View(cml);
+                        return View(cl);
                     }
                 }
             }
-            return View(countryList);
-        }
-
-
-        
-        
+            return View();
+        }        
     }
 }
