@@ -1,0 +1,29 @@
+﻿@using YemekTarifiApp.Web.Models.Dtos
+@model FoodDetailsDto
+
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-4 text-center">
+                @* Resim gelecek *@
+                <img src="~/YemekTarifiImages/@Model.ImageUrl">
+            </div>
+            <div class="col-8">
+                @* Diğer detaylar gelecek *@
+                <h1 class="card-title display-6">@Model.Name</h1>
+                <p class="card-text">@Model.Material</p>
+                
+              
+                @foreach (var category in Model.Categories)
+                {
+                    <a href="#" class="btn btn-link p-0 mb-3">@category.Name</a>
+                }
+                <p class="card-text">@Model.Description</p>
+
+                <p class="card-text">@Model.Point</p>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+
