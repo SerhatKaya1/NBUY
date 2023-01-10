@@ -18,7 +18,7 @@ namespace ShoppingApp.Data.Config
             //bir Composite Primary Key tanımlaması yaptık.
 
             builder.ToTable("ProductCategories");
-
+            
             builder.HasData(
                 new ProductCategory { ProductId = 1, CategoryId = 1 },
                 new ProductCategory { ProductId = 1, CategoryId = 2 },
