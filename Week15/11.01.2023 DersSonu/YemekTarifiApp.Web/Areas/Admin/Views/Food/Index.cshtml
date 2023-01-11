@@ -1,0 +1,59 @@
+﻿@model List<FoodListDto>
+<h1>Yemekler</h1>
+<hr />
+<a class="btn btn-outline-primary"
+   asp-area="Admin"
+   asp-controller="Food"
+   asp-action="Create">Yeni Yemek Ekle</a>
+<hr />
+<table class="table table-responsive table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Resim</th>
+            <th>Adı</th>
+            <th>Yemek Malzemesi</th>
+            <th>Yemek Tarifi</th>
+            <th>Yemek Hakkında Bilgi</th>
+            <th>Kategorisi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Food.Id</td>
+                <td>
+                    <img src="/YemekTarifiImages/" width="30" />
+                </td>
+                <td>@item.Food.Name</td>
+                <td>@item.Food.Material</td>
+                <td>@item.Food.FoodRecipes</td>
+                <td>@item.Food.Description</td>
+                <td>
+                    <ul>
+                        @foreach (var category in item.Food.FoodCategories)
+                        {
+                            <li>@category.Category.Name</li>
+                        }
+                    </ul>
+                </td>
+                <td>
+
+                    <a class="btn btn-warning btn-sm"
+                   asp-area="Admin"
+                   asp-controller="Food"
+                   asp-action="Edit"
+                   asp-route-id=@item.Food.Id>Düzenle</a>
+
+                    <a class="btn btn-danger btn-sm"
+                   asp-area="Admin"
+                   asp-controller="Product"
+                   asp-action="Delete"
+                   asp-route-id=@item.Food.Id>Sil</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
